@@ -1,0 +1,15 @@
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.csproj.AssemblyReference.cache
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.GeneratedMSBuildEditorConfig.editorconfig
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.AssemblyInfoInputs.cache
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.AssemblyInfo.cs
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.csproj.CoreCompileInputs.cache
+/home/alex/Documents/C#-Projects/Zombie-Simulator/bin/Debug/net6.0/Zombie-Simulator
+/home/alex/Documents/C#-Projects/Zombie-Simulator/bin/Debug/net6.0/Zombie-Simulator.deps.json
+/home/alex/Documents/C#-Projects/Zombie-Simulator/bin/Debug/net6.0/Zombie-Simulator.runtimeconfig.json
+/home/alex/Documents/C#-Projects/Zombie-Simulator/bin/Debug/net6.0/Zombie-Simulator.dll
+/home/alex/Documents/C#-Projects/Zombie-Simulator/bin/Debug/net6.0/ref/Zombie-Simulator.dll
+/home/alex/Documents/C#-Projects/Zombie-Simulator/bin/Debug/net6.0/Zombie-Simulator.pdb
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.dll
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/ref/Zombie-Simulator.dll
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.pdb
+/home/alex/Documents/C#-Projects/Zombie-Simulator/obj/Debug/net6.0/Zombie-Simulator.genruntimeconfig.cache
