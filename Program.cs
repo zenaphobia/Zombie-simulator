@@ -22,6 +22,7 @@ namespace ZombieSimulator
             Weapon pistol = new Weapon( "Pistol", 2 );
             Survivor mainSurvivor = new Survivor( "Alex", pistol );
             homeBase.addSurvivor( mainSurvivor );
+            homeBase.addWeapon(pistol);
 
             animation.animateText("Dusk is setting, you must prepare yourself for another wave...");
             animation.pause();
@@ -36,15 +37,14 @@ namespace ZombieSimulator
             Console.WriteLine("What will you do next?");
 
             Console.WriteLine("==========================================");
-            Console.WriteLine("1.Search for Weapons or supplies || 2.Repair Barricade || 3.Search for survivors");
+            Console.WriteLine("1.Search for Weapons or supplies || 2.Repair Barricade || 3.Search for survivors || 4.Prepare for Night");
             Console.WriteLine("==========================================");
 
-            userInput = Console.ReadLine();
+            //userInput = Console.ReadLine();
 
-            switch( userInput )
+            for(int i = 0; i < 100; i++)
             {
-                case "search":
-                    break;
+                Console.WriteLine(homeBase.search(12));
             }
 
 

@@ -8,6 +8,7 @@ namespace ZombieSimulator
         int maxHealth { get; set; }
         int dayTimeRemaining { get; set; }
         List<Survivor> allSurvivors = new List<Survivor>();
+        List<Weapon> allWeapons = new List<Weapon>();
         public SurvivorBase( int _baseHealth, int _maxHealth )
         {
             this.baseHealth = _baseHealth;
@@ -37,7 +38,7 @@ namespace ZombieSimulator
 
             foreach( Survivor survivor in allSurvivors )
             {
-                _sectionDefense += survivor.getWeapon.Damage;
+                _sectionDefense += survivor.Weapon.Damage;
                 _totalDefense += _sectionDefense;
             }
 
@@ -52,6 +53,16 @@ namespace ZombieSimulator
         public void removeSurvivor(Survivor _survivor)
         {
             allSurvivors.Remove(_survivor);
+        }
+
+        public void equipWeaponToSurvivor(Survivor _survivor, Weapon _weapon)
+        {
+            _survivor.Weapon = _weapon;
+        }
+
+        public void addWeapon(Weapon _weapon)
+        {
+            allWeapons.Add(_weapon);
         }
 
         public int search(int _time)
@@ -72,9 +83,9 @@ namespace ZombieSimulator
                     return 22;
                 case .99:
                     return 25;
+                default:
+                    return 3;
             }
-            //needs to return something...
-            return 0;
         }
 
         public int hoursRemaining

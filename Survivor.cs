@@ -17,9 +17,10 @@ namespace ZombieSimulator
             get { return name; }
         }
 
-        public Weapon getWeapon
+        public Weapon Weapon
         {
             get { return equippedWeapon; }
+            set { equippedWeapon = value; }
         }
     }
 }
