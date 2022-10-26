@@ -54,6 +54,29 @@ namespace ZombieSimulator
             allSurvivors.Remove(_survivor);
         }
 
+        public int search(int _time)
+        {
+
+            Random randomInt100 = new Random();
+            double _random = randomInt100.NextDouble();
+
+            switch( _random * _time )
+            {
+                case < .25:
+                    return 5;
+                case < .50:
+                    return 9;
+                case < .80:
+                    return 14;
+                case < .99:
+                    return 22;
+                case .99:
+                    return 25;
+            }
+            //needs to return something...
+            return 0;
+        }
+
         public int hoursRemaining
         {
             get { return dayTimeRemaining; }

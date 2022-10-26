@@ -6,7 +6,7 @@ namespace ZombieSimulator
     {
         static void Main(string[] args)
         {
-            string userInput;
+            string userInput = "";
             int daysSurvived = 0;
 
             ZombieEngine zombieEngine = new ZombieEngine();
@@ -41,11 +41,12 @@ namespace ZombieSimulator
 
             userInput = Console.ReadLine();
 
-            search();
-        }
+            switch( userInput )
+            {
+                case "search":
+                    break;
+            }
 
-        public void search()
-        {
 
         }
     }
