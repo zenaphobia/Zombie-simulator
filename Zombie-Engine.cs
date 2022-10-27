@@ -10,11 +10,6 @@ namespace ZombieSimulator
         int titanTotal { get; set; }
         int sprinterTotal { get; set; }
         List<Zombie> zombieList = new List<Zombie>();
-        public ZombieEngine()
-        {
-
-        }
-
         public Zombie spawnZombie( string zombie_type, int _amount )
         {
             switch(zombie_type)
