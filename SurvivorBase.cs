@@ -88,20 +88,40 @@ namespace ZombieSimulator
             }
         }
 
-        public object searchForSurvivors()
+        ///<summary>
+        ///Returns a survivor with weapon, or returns 0. Make sure to account for this.
+        ///</summary>
+        dynamic _searchForSurvivors(int _hours)
         {
             Random _randomGen = new Random();
-            Weapon _weaponGen = new Weapon();
             double _random = _randomGen.NextDouble();
+            WeaponGenerator _weaponGenerator = new WeaponGenerator();
 
             switch( _random )
             {
                 case < .25:
-                    return new Survivor( _random.ToString(), _weaponGen.getWeapon("pistol"));
-                case > .55:
-                    return new Survivor( _random.ToString() , new Weapon("Pistol", 2));
+                    return new Survivor( _random.ToString(), _weaponGenerator.getWeapon("pistol"));
+                case < .55:
+                    return new Survivor( _random.ToString() , _weaponGenerator.getWeapon("rifle"));
+                case < .85:
+                    return new Survivor( _random.ToString(), _weaponGenerator.getWeapon("ar"));
                 default:
                     return 0;
+            }
+        }
+
+        public void searchForSurvivors( int _hours )
+        {
+            dynamic _item =_searchForSurvivors( _hours );
+
+            if( _item is Survivor)
+            {
+                this.allSurvivors.Add( _item );
+                Console.WriteLine($"You find a survivor... Their name is { _item.Name }, and they are equipped with { _item.Weapon.Name }");
+            }
+            else
+            {
+                Console.WriteLine("You found no survivors...");
             }
         }
 

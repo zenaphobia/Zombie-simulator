@@ -42,11 +42,7 @@ namespace ZombieSimulator
 
             //userInput = Console.ReadLine();
 
-            for(int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(homeBase.search(12));
-            }
-
+            homeBase.searchForSurvivors(15);
 
         }
     }

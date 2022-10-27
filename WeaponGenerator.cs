@@ -4,6 +4,11 @@ namespace ZombieSimulator
 {
     public class WeaponGenerator
     {
+        ///<summary>
+        ///Returns a standard weapon type. Available options are:
+        ///"pistol", "rifle", "ar", "unarmed".
+        ///On error, will return a 'pistol'.
+        ///</summary>
         public Weapon getWeapon( string _weapon )
         {
             switch( _weapon )
