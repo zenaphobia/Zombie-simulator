@@ -68,8 +68,8 @@ namespace ZombieSimulator
         public int search(int _time)
         {
 
-            Random randomInt100 = new Random();
-            double _random = randomInt100.NextDouble();
+            Random _randomGen = new Random();
+            double _random = _randomGen.NextDouble();
 
             switch( _random * _time )
             {
@@ -85,6 +85,23 @@ namespace ZombieSimulator
                     return 25;
                 default:
                     return 3;
+            }
+        }
+
+        public object searchForSurvivors()
+        {
+            Random _randomGen = new Random();
+            Weapon _weaponGen = new Weapon();
+            double _random = _randomGen.NextDouble();
+
+            switch( _random )
+            {
+                case < .25:
+                    return new Survivor( _random.ToString(), _weaponGen.getWeapon("pistol"));
+                case > .55:
+                    return new Survivor( _random.ToString() , new Weapon("Pistol", 2));
+                default:
+                    return 0;
             }
         }
 
