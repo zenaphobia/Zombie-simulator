@@ -12,6 +12,7 @@ namespace ZombieSimulator
             ZombieEngine zombieEngine = new ZombieEngine();
             Animation animation = new Animation();
             SurvivorBase homeBase = new SurvivorBase( 45, 82 );
+            Controller gameEngine = new Controller();
 
             // Spawning zombies !BRAINZ!
             Zombie strayZombie = zombieEngine.spawnZombie( "stray", 3 );
@@ -34,15 +35,7 @@ namespace ZombieSimulator
 
             animation.animateText( $"Your base is at { homeBase.BaseHealth }" );
 
-            Console.WriteLine("What will you do next?");
-
-            Console.WriteLine("==========================================");
-            Console.WriteLine("1.Search for Weapons or supplies || 2.Repair Barricade || 3.Search for survivors || 4.Prepare for Night");
-            Console.WriteLine("==========================================");
-
-            //userInput = Console.ReadLine();
-
-            homeBase.searchForSurvivors(15);
+            gameEngine.deployChoice( homeBase );
 
         }
     }

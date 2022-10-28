@@ -89,30 +89,37 @@ namespace ZombieSimulator
         }
 
         ///<summary>
-        ///Returns a survivor with weapon, or returns 0. Make sure to account for this.
+        ///Returns a survivor with weapon, or returns null. Make sure to account for this.
         ///</summary>
-        dynamic _searchForSurvivors(int _hours)
+        Survivor _searchForSurvivors(int _hours)
         {
             Random _randomGen = new Random();
-            double _random = _randomGen.NextDouble();
+            double _random = ( _randomGen.NextDouble() / 12 ) * _hours;
             WeaponGenerator _weaponGenerator = new WeaponGenerator();
+
+            Console.WriteLine( _random );
 
             switch( _random )
             {
-                case < .25:
+                case < .60:
                     return new Survivor( _random.ToString(), _weaponGenerator.getWeapon("pistol"));
-                case < .55:
-                    return new Survivor( _random.ToString() , _weaponGenerator.getWeapon("rifle"));
                 case < .85:
+                    return new Survivor( _random.ToString() , _weaponGenerator.getWeapon("rifle"));
+                case < .90:
                     return new Survivor( _random.ToString(), _weaponGenerator.getWeapon("ar"));
                 default:
-                    return 0;
+                    return null;
             }
         }
 
         public void searchForSurvivors( int _hours )
         {
-            dynamic _item =_searchForSurvivors( _hours );
+            if( _hours > dayTimeRemaining )
+            {
+                Console.WriteLine("Not enough hours in the day to search that long...");
+                return;
+            }
+            Survivor _item =_searchForSurvivors( _hours );
 
             if( _item is Survivor)
             {
@@ -123,11 +130,14 @@ namespace ZombieSimulator
             {
                 Console.WriteLine("You found no survivors...");
             }
+
+            dayTimeRemaining = dayTimeRemaining - _hours;
         }
 
         public int hoursRemaining
         {
             get { return dayTimeRemaining; }
+            set { dayTimeRemaining = value; }
         }
 
         public int BaseHealth
